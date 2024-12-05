@@ -1,0 +1,329 @@
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100PX;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.815)), 
+                    url('/src/assets/1715793907448.jpg'); /* Use relative path */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the image covers the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.image-part {
+  width: 50%;
+  height: 90%;
+  background-image: linear-gradient(to top,rgba(0, 0, 0, 0.2  ),rgba(0, 0, 0, 0.915)),url('/src/assets/1715793907448.jpg');
+  background-size: cover;
+  /* border: 10px solid white; */
+  position: relative; /* Required for animation */
+  animation: move-right-to-left 2s ease-in-out;
+}
+
+.image-part:hover{
+  background-image: url('/src/assets/saheera.jpg');
+}
+
+
+@keyframes move-right-to-left {
+  from {
+    right: -100%; /* Start off-screen */
+  }
+  to {
+    right: 0; /* End position */
+  }
+}
+
+.info-part {
+  width: 40%;
+  height: 70%;
+  background-color: #000000;
+  box-shadow: 0px 4px 10px rgba(109, 108, 108, 0.5);
+  position: relative; 
+  left: 100px;
+  z-index: 2;
+  animation: move-left-to-right 2s ease-in-out;
+}
+
+
+@keyframes move-left-to-right {
+  from {
+    left: -100%; /* Start off-screen */
+  }
+  to {
+    right: 0; /* End position */
+  }
+}
+
+/* --------------------------------- */
+.info-part>p {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* text-shadow: 3px 3px black; */
+  margin-top: 40px;
+  font-family: cursive;
+}
+
+.info-part>h2 {
+color: rgb(255, 255, 255);
+margin-left: 10%;
+margin-top: 10px;
+font-family: cursive;
+font-size: 30px;
+
+}
+
+.info-part:hover{
+  background-color: #DA9510;
+}
+
+
+/* .................................animation.........................*/
+
+.animation {
+  display: inline-block;
+
+}
+
+.typed-out {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 2s steps(22, end) forwards;
+  font-size: 1.6rem;
+  width: 0;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+@keyframes typing {
+  from {
+      width: 0
+  }
+
+  to {
+      width: 100%
+  }
+}
+
+.animation>p {
+  color: white;
+  margin-left: 0%;
+  margin-top: 30px;
+  font-size: 20px;
+  
+}
+
+.typed-out {
+  margin-left: 30%;
+}
+
+.typed-out>h1 {
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 1px 1px #8B9EA5;
+  font-family: cursive;
+}
+p{
+  color: rgb(250, 247, 247);
+  font-size: 15px;
+  font-family: cursive;
+  word-spacing: 2px;
+  margin-left: 9%;
+}
+
+.info-part>.ani button {
+  margin-left: 25%;
+  margin-top: 30px;
+  width: 150px;
+  height: 40px;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px rgb(12, 12, 12);
+  font-size: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+}
+.info-part>.ani button>a{
+  text-decoration: none;
+  color: #d1cece;
+}
+.info-part>.ani button>a:hover{
+  color: #000000;
+}
+
+.info-part>.ani button:hover {
+  background-color: #fff6f6;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+/*......................... arrow animation...................... */
+
+
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* Ensure animation doesn't go outside bounds */
+}
+
+.arrow a {
+  /* text-decoration: none; */
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-left: 30px; /* Add space for arrow animation */
+}
+.arrow p{
+  margin: 40px;
+}
+
+.arrow span {
+  display: block;
+  width: 10px; 
+  height: 10px;
+  margin-left: 40px;
+  border-bottom: 3px solid rgb(255, 255, 255); 
+  border-right: 3px solid rgb(239, 232, 232); 
+  transform: rotate(45deg); 
+  position: absolute;
+  right: 10px; 
+  animation: animate 2s infinite;
+  color: #fefcfc;
+}
+
+.arrow p a{
+  color: white;
+}
+
+
+
+.arrow span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px); 
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px); 
+  }
+}
+
+
+
+/* ******************* ----------------------------------------- Mobile Responsive----------------------------- ******************* */
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; 
+    justify-content: space-between; 
+    background-color: rgb(0, 0, 0);
+  }
+
+  .image-part {
+    width: 80%;
+    height: 80%;
+    position: relative; 
+    z-index: 2;
+    animation: move-up-to-center 2s ease-in-out;
+    bottom: 40px;
+    margin-right: 30px;
+  }
+
+  @keyframes move-left-to-center {
+    from {
+      transform: translateX(-100%); 
+    }
+    to {
+      transform: translateX(0); 
+    }
+  }
+
+
+  .info-part {
+    width: 100%;
+    height: 100vh;
+    position: relative; 
+    animation: move-left-to-center 2s ease-in-out;
+    left: 0;
+    
+  }
+
+  @keyframes move-up-to-center {
+    from {
+      transform: translateY(100%); 
+    }
+    to {
+      transform: translateY(0); 
+    }
+  }
+
+
+
+.info-part > p{
+    font-size: 12px; /* Adjust font size for smaller screens */
+    margin-left: 5%;
+  }
+.info-part h2{
+    font-size: 13px;
+} 
+
+  .typed-out h1 {
+    font-size: 22px;
+    margin-left: 15%;
+  }
+
+  p {
+    font-size: 14px; 
+    margin: 10px;    
+    line-height: 1.5; 
+    word-spacing: 0px; 
+    text-align: left; 
+  }
+
+  .info-part > .ani button {
+    margin-left: 10%;
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .arrow {
+    flex-direction: column; 
+  }
+
+  .arrow  span {
+    display: block;
+    width: 10px; 
+    height: 10px;
+    margin-left: 40px;
+    border-bottom: 3px solid rgb(0, 0, 0); 
+    border-right: 3px solid rgb(0, 0, 0); 
+  }
+
+  .arrow a {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+}

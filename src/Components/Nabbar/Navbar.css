@@ -1,0 +1,52 @@
+.nav{
+  width: 100VW;
+  box-shadow: 2px 2px 4px rgba(101, 100, 100, 0.5);
+  position: fixed;
+}
+.logo {
+  font-size: 35PX; 
+  font-weight: bold;
+  background: linear-gradient(to right, #E5A310, rgb(253, 253, 253), rgb(0, 0, 0));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: move-gradient 6s infinite;
+  text-align: center;
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.text{
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text a {
+  color: white; 
+  text-decoration: none;
+  margin: 0 10px; 
+  transition: color 0.3s ease; 
+}
+
+ .text a:hover{
+  color: #E5A310;
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  .text{
+    width: 300px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  }
+}
